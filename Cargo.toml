@@ -13,12 +13,7 @@ opt-level=3
 bevy = { version = "0.7"}
 rand="0.8"
 rust_math = "0.3.7"
-criterion = "0.3"
 micromath = "2.0.0"
-
-[[bench]]
-name = "my_benchmark"
-harness = false
 
 
 [workspace]

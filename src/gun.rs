@@ -14,12 +14,13 @@ fn build(&self,app:&mut App){
             .add_system(update_gun_loc_system)
             .add_system(spawn_bullet_system)
             .add_system(update_bullet_system)
-            .add_system(update_gun_rot_system); 
+            .add_system(update_gun_rot_system)
+            .add_system(manage_gunshot_cooldown_system); 
     }
  }
 
 fn gun_spawn_system(mut commands:Commands,game_textures:Res<GameTextures>){
-   //spawn gun {{{
+  //spawn gun {{{
     commands.spawn_bundle(SpriteBundle{
        texture: game_textures.shotgun.clone(),
        transform: Transform{
@@ -30,7 +31,7 @@ fn gun_spawn_system(mut commands:Commands,game_textures:Res<GameTextures>){
        ..Default::default()
     })
     .insert(Gun{rotates:true,spread:5.,damage:10.,firerate:1.,bullet_speed:0.1,bullet:game_textures.bullet.clone()})
-    .insert(Cooldown{elapsed:0.,duration:5.,available:true});
+    .insert(Cooldown{elapsed:0.,duration:60.,available:true});
     //}}} // alright. this needs some sort of system with an if where we can insert various
     //different guns. 
 }
@@ -87,7 +88,9 @@ fn update_gun_rot_system(wnds: Res<Windows>,q_camera: Query<(&Camera, &GlobalTra
 }
 
 fn spawn_bullet_system(mut commands: Commands,game_textures:Res<GameTextures>,query: Query<&Transform, With<Gun>>,kb:Res<Input<KeyCode>>,cooldown_query: Query<&Cooldown, With<Gun>>){
-    if kb.pressed(KeyCode::Space){
+    //spawn bullet system {{{
+    let cooldown = cooldown_query.single();
+    if kb.pressed(KeyCode::Space) && cooldown.available{
     let gun_tf = query.single();
     let bullet_dir = gun_tf.rotation*Vec3::new(50.,1.,0.);
     commands.spawn_bundle(SpriteBundle{
@@ -98,6 +101,7 @@ fn spawn_bullet_system(mut commands: Commands,game_textures:Res<GameTextures>,qu
         },
         ..Default::default() 
     }).insert(Bullet{direction:bullet_dir}).insert(Movable{auto_despawn:true,friction:false}).insert(Velocity{x:0.,y:0.});
+    //}}}
 }}
 fn update_bullet_system(query: Query<(&Transform,&Gun),Without<Bullet>>,mut bullet_query: Query<(&mut Transform, &Bullet), With<Bullet>>){
     //update bullet{{{
@@ -111,5 +115,15 @@ fn update_bullet_system(query: Query<(&Transform,&Gun),Without<Bullet>>,mut bull
 }}
 
 fn manage_gunshot_cooldown_system(mut query: Query<&mut Cooldown, With<Gun>>){
-    
+    //gun cooldown system {{{
+    //makes the gun not shoot a bullet every frame
+    let mut cooldown = query.single_mut();
+    if cooldown.elapsed >=cooldown.duration{
+        cooldown.elapsed = 0.;
+        cooldown.available = true;
+    }
+    else{
+        cooldown.elapsed += 1.;
+    }
+    //}}}
 }

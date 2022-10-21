@@ -26,6 +26,8 @@ impl From<(f32,f32)> for SpriteSize{
      }
 }
 
+#[derive(Component)]
+pub struct Enemy;
 //}}}
 
 //Player Components{{{

@@ -2,6 +2,9 @@ use bevy::prelude::*;
 use player::*;
 use components::*;
 use gun::*;
+use enemy::*;
+use std::env;
+use std::fs;
 
 //Asset Consts{{{
 
@@ -14,10 +17,13 @@ const SHOTGUN_SCALE: f32 = 2.;
 
 const BULLET_SPRITE: &str = "topdown_shooter/other/bulleta.png";
 
+const BASIC_ENEMY_SPRITE: &str = ""
+
 pub struct GameTextures {
     player: Handle<Image>,
     shotgun: Handle<Image>,
     bullet: Handle<Image>,
+    basic_enemy: Handle<Image>,
 }
 
 //Asset Consts}}}
@@ -62,10 +68,16 @@ fn main() {
         .add_plugins(DefaultPlugins)
         .add_plugin(PlayerPlugin)
         .add_plugin(GunPlugin)
+        .add_plugin(EnemyPlugin)
         .add_startup_system(setup_system)
         .add_system(move_system)
         .run();
     //}}}
+}
+fn load_map(){
+    let contents = fs::read_to_string("maps/map.txt")
+        .expect("Should have been able to read the file");
+    println!("{contents}");
 }
 
 fn setup_system(mut commands: Commands, asset_server:Res<AssetServer>,mut windows: ResMut<Windows>){
@@ -78,6 +90,7 @@ fn setup_system(mut commands: Commands, asset_server:Res<AssetServer>,mut window
         player: asset_server.load(PLAYER_SPRITE),
         shotgun: asset_server.load(SHOTGUN_SPRITE),
         bullet: asset_server.load(BULLET_SPRITE),
+        basic_enemy:
     };
     commands.insert_resource(game_textures);
     

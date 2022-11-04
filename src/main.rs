@@ -17,7 +17,8 @@ const SHOTGUN_SCALE: f32 = 2.;
 
 const BULLET_SPRITE: &str = "topdown_shooter/other/bulleta.png";
 
-const BASIC_ENEMY_SPRITE: &str = ""
+const BASIC_ENEMY_SPRITE: &str ="topdown_shooter/characters/3.png" ;
+const ENEMY_SCALE: f32 = 2.;
 
 pub struct GameTextures {
     player: Handle<Image>,
@@ -74,11 +75,23 @@ fn main() {
         .run();
     //}}}
 }
-fn load_map(){
-    let contents = fs::read_to_string("maps/map.txt")
-        .expect("Should have been able to read the file");
-    println!("{contents}");
-}
+// Experimental LoadMap {{{
+/*fn load_map(map: &str) -> Vec<Vec<char>>{
+    let location = format!("{}{}","files/maps/",map);
+    let contents = fs::read_to_string(location).expect("Failed to read file");
+    let mut map: Vec<Vec<i32>> = Vec::new(); //could be optimized. doesnt need i32
+    let chars = contents.chars();
+    for i in 0..contents.len()-1{
+        let mut curchar = match chars.nth(i){
+            Some(curchar) => curchar,
+            None => return Vec<Vec<char>>::new(),
+        };
+        curchar.push(chars.nth(i+1));
+        if curchar == "\n"{
+        }
+    return contents
+}*/
+//}}}
 
 fn setup_system(mut commands: Commands, asset_server:Res<AssetServer>,mut windows: ResMut<Windows>){
     //Setup System       ---{{{
@@ -90,7 +103,7 @@ fn setup_system(mut commands: Commands, asset_server:Res<AssetServer>,mut window
         player: asset_server.load(PLAYER_SPRITE),
         shotgun: asset_server.load(SHOTGUN_SPRITE),
         bullet: asset_server.load(BULLET_SPRITE),
-        basic_enemy:
+        basic_enemy: asset_server.load(BASIC_ENEMY_SPRITE),
     };
     commands.insert_resource(game_textures);
     
@@ -107,7 +120,7 @@ fn move_system(mut commands: Commands, mut query: Query<(Entity,&mut Velocity,&m
         let translation = &mut transform.translation;
         translation.x += velocity.x *TIME_STEP*BASE_SPEED;
         translation.y += velocity.y *TIME_STEP*BASE_SPEED;
-        
+            
         if movable.friction{
             velocity.x=0.;
             velocity.y=0.;

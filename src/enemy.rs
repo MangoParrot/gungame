@@ -30,7 +30,7 @@ fn build(&self,app:&mut App){
 
 fn enemy_spawn_system(mut commands: Commands,time: Res<Time>, mut timer: ResMut<Wavetimer>,game_textures:Res<GameTextures>){
 //enemy_spawn_system {{{
-    let waves = vec![7,20,50];
+    let waves = vec![7,7,7];
     let mut current_wave = 1;
     if timer.0.tick(time.delta()).just_finished() {
             for i in 0..waves[current_wave]{

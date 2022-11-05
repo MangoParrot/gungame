@@ -39,10 +39,10 @@ pub struct Player;
 pub struct Gun{
     pub rotates: bool,
     pub spread: f32,
+    pub bullet_count: f32,
     pub damage: f32,
-    pub firerate: f32, // kinda uses the cooldown
+    pub firerate: f32, 
     pub bullet_speed: f32,
-    pub bullet: Handle<Image>,
 }
 
 #[derive(Component)]

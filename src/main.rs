@@ -16,9 +16,11 @@ const SHOTGUN_SPRITE: &str = "topdown_shooter/guns/shotgun/sprite.png";
 const SHOTGUN_SCALE: f32 = 2.;
 
 const BULLET_SPRITE: &str = "topdown_shooter/other/bulleta.png";
+const BULLET_SIZE: (f32,f32) = (6.,6.);
 
 const BASIC_ENEMY_SPRITE: &str ="topdown_shooter/characters/3.png" ;
 const ENEMY_SCALE: f32 = 2.;
+const ENEMY_SIZE: (f32,f32) = (18.,21.);
 
 pub struct GameTextures {
     player: Handle<Image>,

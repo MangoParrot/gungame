@@ -1,6 +1,7 @@
 use bevy::prelude::*;
-use crate::{Player,Transform,GameTextures,GUN_X_OFFSET,PLAYER_SPAWN_POS,SHOTGUN_SCALE,WinSize};
+use crate::{Player,Transform,GameTextures,GUN_X_OFFSET,PLAYER_SPAWN_POS,SHOTGUN_SCALE,WinSize,ENEMY_SIZE,ENEMY_SCALE,BULLET_SIZE,};
 use crate::components::*;
+use bevy::sprite::collide_aabb::collide;
 
 pub struct GunPlugin;
 
@@ -15,6 +16,7 @@ fn build(&self,app:&mut App){
             .add_system(spawn_bullet_system)
             .add_system(update_bullet_system)
             .add_system(update_gun_rot_system)
+            .add_system(bullet_damage_system)
             .add_system(manage_gunshot_cooldown_system); 
     }
  }
@@ -30,7 +32,7 @@ fn gun_spawn_system(mut commands:Commands,game_textures:Res<GameTextures>){
        },
        ..Default::default()
     })
-    .insert(Gun{rotates:true,spread:5.,damage:10.,firerate:1.,bullet_speed:0.1,bullet:game_textures.bullet.clone()})
+    .insert(Gun{rotates:true,spread:360.,bullet_count:10.,damage:10.,firerate:1.,bullet_speed:0.1,})
     .insert(Cooldown{elapsed:0.,duration:60.,available:true});
     //}}} // alright. this needs some sort of system with an if where we can insert various
     //different guns. 
@@ -87,20 +89,44 @@ fn update_gun_rot_system(wnds: Res<Windows>,q_camera: Query<(&Camera, &GlobalTra
     //}}}
 }
 
-fn spawn_bullet_system(mut commands: Commands,game_textures:Res<GameTextures>,query: Query<&Transform, With<Gun>>,kb:Res<Input<KeyCode>>,cooldown_query: Query<&Cooldown, With<Gun>>){
+fn spawn_bullet_system(mut commands: Commands,game_textures:Res<GameTextures>,query: Query<(&Transform, &Gun)>,kb:Res<Input<KeyCode>>,mut cooldown_query: Query<&mut Cooldown, With<Gun>>){
     //spawn bullet system {{{
-    let cooldown = cooldown_query.single();
+    let mut cooldown = cooldown_query.single_mut();
     if kb.pressed(KeyCode::Space) && cooldown.available{
-    let gun_tf = query.single();
-    let bullet_dir = gun_tf.rotation*Vec3::new(50.,1.,0.);
-    commands.spawn_bundle(SpriteBundle{
-        texture: game_textures.bullet.clone(),
-        transform: Transform{
-            translation: Vec3::new(gun_tf.translation.x,gun_tf.translation.y,gun_tf.translation.z),
-            ..Default::default()
-        },
-        ..Default::default() 
-    }).insert(Bullet{direction:bullet_dir}).insert(Movable{auto_despawn:true,friction:false}).insert(Velocity{x:0.,y:0.});
+    cooldown.available  = false;
+    let gun_tf = query.single().0;
+    let gun_stats = query.single().1;
+    let bullet_dir: Vec3;
+    if gun_stats.bullet_count == 1.{
+        let bullet_dir = gun_tf.rotation*Vec3::new(50.,1.,0.);
+        commands.spawn_bundle(SpriteBundle{
+            texture: game_textures.bullet.clone(),
+            transform: Transform{
+                translation: Vec3::new(gun_tf.translation.x,gun_tf.translation.y,gun_tf.translation.z),
+                ..Default::default()
+            },
+            ..Default::default() 
+        }).insert(Bullet{direction:bullet_dir}).insert(Movable{auto_despawn:true,friction:false}).insert(Velocity{x:0.,y:0.});
+    }
+    else{
+    // calculating the degree amount between the various bullets. I hate radians
+    let increment = gun_stats.spread / gun_stats.bullet_count * 10.;
+    //loop over and place bullets over said increments
+    for i in 0..gun_stats.bullet_count as i32{
+        //TODO: Minus half of the spread or minus the spread for the first half to make the spread
+        //even
+        let bullet_dir = gun_tf.rotation*Vec3::new(50.,((increment*i as f32)-gun_stats.spread*5.).to_radians(),0.);
+        commands.spawn_bundle(SpriteBundle{
+            texture: game_textures.bullet.clone(),
+            transform: Transform{
+                translation: Vec3::new(gun_tf.translation.x,gun_tf.translation.y,gun_tf.translation.z),
+                ..Default::default()
+            },
+            ..Default::default() 
+        }).insert(Bullet{direction:bullet_dir}).insert(Movable{auto_despawn:true,friction:false}).insert(Velocity{x:0.,y:0.});
+         
+    }
+    }
     //}}}
 }}
 fn update_bullet_system(query: Query<(&Transform,&Gun),Without<Bullet>>,mut bullet_query: Query<(&mut Transform, &Bullet), With<Bullet>>){
@@ -109,7 +135,7 @@ fn update_bullet_system(query: Query<(&Transform,&Gun),Without<Bullet>>,mut bull
     // do something with spread and stuff
     for  (mut bullet_tf,bullet) in bullet_query.iter_mut(){
     bullet_tf.translation += gun_stats.bullet_speed*bullet.direction;
-    //TODO: Implement collisions , make the gunstats actually do someth
+    //TODO:  make the gunstats actually do someth, add more guns - store in a bevy resource hashmap
 
     //}}}
 }}
@@ -122,8 +148,23 @@ fn manage_gunshot_cooldown_system(mut query: Query<&mut Cooldown, With<Gun>>){
         cooldown.elapsed = 0.;
         cooldown.available = true;
     }
-    else{
+    else if cooldown.available == false{
         cooldown.elapsed += 1.;
     }
     //}}}
+}
+
+fn bullet_damage_system(mut commands: Commands, mut query: Query<(&Transform, Entity), With<Enemy>>, bullet_query: Query<(&Transform,Entity), With<Bullet>>){
+    for (enemy_tf, enemy_entity) in query.iter_mut(){  //unoptimized. Checks all the bullets for all the enemies, giving it O(n^2).
+        for (bullet_tf,bullet_entity) in bullet_query.iter(){
+            let bullet_size = Vec2::new(bullet_tf.scale.x,bullet_tf.scale.y);
+            let enemy_size = Vec2::new(enemy_tf.scale.x,enemy_tf.scale.y);
+            let collision = collide(bullet_tf.translation,bullet_size,enemy_tf.translation,enemy_size);
+            if let Some(_) = collision{
+                commands.entity(enemy_entity).despawn();
+                commands.entity(bullet_entity).despawn();
+            }
+
+        }
+    }
 }

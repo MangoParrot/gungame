@@ -155,6 +155,7 @@ fn manage_gunshot_cooldown_system(mut query: Query<&mut Cooldown, With<Gun>>){
 }
 
 fn bullet_damage_system(mut commands: Commands, mut query: Query<(&Transform, Entity), With<Enemy>>, bullet_query: Query<(&Transform,Entity), With<Bullet>>){
+    // Bullet Collision {{{
     for (enemy_tf, enemy_entity) in query.iter_mut(){  //unoptimized. Checks all the bullets for all the enemies, giving it O(n^2).
         for (bullet_tf,bullet_entity) in bullet_query.iter(){
             let bullet_size = Vec2::new(bullet_tf.scale.x,bullet_tf.scale.y);
@@ -167,4 +168,7 @@ fn bullet_damage_system(mut commands: Commands, mut query: Query<(&Transform, En
 
         }
     }
+    // }}}
 }
+
+fn gun_juice_system(query: Query<&mut Transform >)

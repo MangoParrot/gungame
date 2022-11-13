@@ -1,0 +1,11 @@
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/bevy_input-30d3b4d4a6c61178.rmeta: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/axis.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/gamepad.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/input.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/keyboard.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/mouse.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/touch.rs
+
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/bevy_input-30d3b4d4a6c61178.d: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/axis.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/gamepad.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/input.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/keyboard.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/mouse.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/touch.rs
+
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/lib.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/axis.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/gamepad.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/input.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/keyboard.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/mouse.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_input-0.8.1/src/touch.rs:

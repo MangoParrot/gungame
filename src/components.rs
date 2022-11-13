@@ -43,6 +43,7 @@ pub struct Gun{
     pub damage: f32,
     pub firerate: f32, 
     pub bullet_speed: f32,
+    pub recoil: f32,
 }
 
 #[derive(Component)]

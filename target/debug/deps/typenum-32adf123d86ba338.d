@@ -1,0 +1,18 @@
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/typenum-32adf123d86ba338.rmeta: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/bit.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/int.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/marker_traits.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/operator_aliases.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/private.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/type_operators.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/uint.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/array.rs /Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/op.rs /Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/consts.rs
+
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/typenum-32adf123d86ba338.d: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/bit.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/int.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/marker_traits.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/operator_aliases.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/private.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/type_operators.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/uint.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/array.rs /Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/op.rs /Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/consts.rs
+
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/lib.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/bit.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/int.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/marker_traits.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/operator_aliases.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/private.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/type_operators.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/uint.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/typenum-1.15.0/src/array.rs:
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/op.rs:
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/consts.rs:
+
+# env-dep:TYPENUM_BUILD_CONSTS=/Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/consts.rs
+# env-dep:TYPENUM_BUILD_OP=/Users/fedoralfimov/Documents/RUST/gungame/target/debug/build/typenum-bbbd944f7adb252c/out/op.rs

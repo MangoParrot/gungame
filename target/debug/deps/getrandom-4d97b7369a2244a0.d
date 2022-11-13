@@ -1,0 +1,11 @@
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/getrandom-4d97b7369a2244a0.rmeta: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/error.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/util.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/error_impls.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/util_libc.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/use_file.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/macos.rs
+
+/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/getrandom-4d97b7369a2244a0.d: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/error.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/util.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/error_impls.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/util_libc.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/use_file.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/macos.rs
+
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/lib.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/error.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/util.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/error_impls.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/util_libc.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/use_file.rs:
+/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.7/src/macos.rs:

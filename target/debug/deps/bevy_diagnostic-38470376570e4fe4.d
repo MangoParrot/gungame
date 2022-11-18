@@ -1,9 +1,0 @@
-/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/bevy_diagnostic-38470376570e4fe4.rmeta: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/diagnostic.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/entity_count_diagnostics_plugin.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/frame_time_diagnostics_plugin.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/log_diagnostics_plugin.rs
-
-/Users/fedoralfimov/Documents/RUST/gungame/target/debug/deps/bevy_diagnostic-38470376570e4fe4.d: /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/lib.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/diagnostic.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/entity_count_diagnostics_plugin.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/frame_time_diagnostics_plugin.rs /Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/log_diagnostics_plugin.rs
-
-/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/lib.rs:
-/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/diagnostic.rs:
-/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/entity_count_diagnostics_plugin.rs:
-/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/frame_time_diagnostics_plugin.rs:
-/Users/fedoralfimov/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_diagnostic-0.8.1/src/log_diagnostics_plugin.rs:
